@@ -9,7 +9,7 @@ Uma aplicação mobile de exemplo usando Ionic e Firebase. Ela fornece exemplos 
 Clone o projeto usando o git:
 
 ```bash
-$ git clone ...  
+$ git clone https://github.com/gustavopinho/tarefas-app.git
 ```
 
 Instale o Ionic e o Cordova:
