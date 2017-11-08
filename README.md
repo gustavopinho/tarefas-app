@@ -26,7 +26,16 @@ $ npm install
 
 Crie o arquivo config.ts com as configurações do Firebase na raiz da pasta src:
 
-<script src="https://gist.github.com/gustavopinho/d747c597ccf19b2189f57c06c7c726dc.js"></script>
+```bash
+export const config = {
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: ""
+};
+```
 
 Execute o projeto:
 
