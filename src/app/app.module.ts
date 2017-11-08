@@ -7,6 +7,9 @@ import { MyApp } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
+// Para usar o serviço de banco de dados é necessário importar o AngularFirestoreModule
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -20,15 +23,22 @@ import { AuthProvider } from '../providers/auth/auth';
 
 // Importação da página de login
 import { LoginPage } from '../pages/login/login';
+import { TarefasProvider } from '../providers/tarefas/tarefas';
+
+
+// Adicionado páginas de Adicionar tarefa e  listar tarefas concluídas
+import { AdicionarTarefaPage } from '../pages/adicionar-tarefa/adicionar-tarefa';
+import { TarefasFinalizadasPage } from '../pages/tarefas-finalizadas/tarefas-finalizadas';
+
 
 // Configurações do FIREBASE
-let config = {
-  apiKey: "AIzaSyB82YdXQiMWU2cGmW6tTU3SGtjVdzmxKdM",
-  authDomain: "tarefas-app-cbaa3.firebaseapp.com",
-  databaseURL: "https://tarefas-app-cbaa3.firebaseio.com",
-  projectId: "tarefas-app-cbaa3",
-  storageBucket: "tarefas-app-cbaa3.appspot.com",
-  messagingSenderId: "103586895578"
+var config = {
+  apiKey: "AIzaSyAT_yicR3sa4AM9fzX9yaoD90-V-ucYl78",
+  authDomain: "tarefas-app-3a9d4.firebaseapp.com",
+  databaseURL: "https://tarefas-app-3a9d4.firebaseio.com",
+  projectId: "tarefas-app-3a9d4",
+  storageBucket: "tarefas-app-3a9d4.appspot.com",
+  messagingSenderId: "265753878377"
 };
 
 @NgModule({
@@ -39,6 +49,8 @@ let config = {
     HomePage,
     TabsPage,
     LoginPage, // Registrando a página de login
+    AdicionarTarefaPage, // Registrando a página de adicionar tarefa
+    TarefasFinalizadasPage, // Registrando a página de tarefas finalizadas
   ],
   imports: [
     BrowserModule,
@@ -48,6 +60,8 @@ let config = {
     AngularFireModule.initializeApp(config),
     // Configuração do serviço de autenticação do firebase
     AngularFireAuthModule,
+    // Configuração do serviço de banco de dados do firebase
+    AngularFirestoreModule,
   
   ],
   bootstrap: [IonicApp],
@@ -58,12 +72,15 @@ let config = {
     HomePage,
     TabsPage,
     LoginPage, // Registrando a página de login
+    AdicionarTarefaPage, // Registrando a página de adicionar tarefa
+    TarefasFinalizadasPage, // Registrando a página de tarefas finalizadas
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthProvider
+    AuthProvider,
+    TarefasProvider
   ]
 })
 export class AppModule {}

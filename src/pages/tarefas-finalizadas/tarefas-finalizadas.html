@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Tarefas Finalizadas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngFor="let tarefa of tarefas | async"> 
+    {{ tarefa.nome }}
+    <button clear="" ion-button item-end icon-left color="danger" (click)="excluir(tarefa.id)">
+      <ion-icon name="trash"></ion-icon>
+    </button>
+  </ion-item>
+</ion-content>
