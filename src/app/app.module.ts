@@ -11,8 +11,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -32,20 +30,11 @@ import { TarefasFinalizadasPage } from '../pages/tarefas-finalizadas/tarefas-fin
 
 
 // Configurações do FIREBASE
-var config = {
-  apiKey: "AIzaSyAT_yicR3sa4AM9fzX9yaoD90-V-ucYl78",
-  authDomain: "tarefas-app-3a9d4.firebaseapp.com",
-  databaseURL: "https://tarefas-app-3a9d4.firebaseio.com",
-  projectId: "tarefas-app-3a9d4",
-  storageBucket: "tarefas-app-3a9d4.appspot.com",
-  messagingSenderId: "265753878377"
-};
+import { config } from '../config';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     LoginPage, // Registrando a página de login
@@ -67,8 +56,6 @@ var config = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
     HomePage,
     TabsPage,
     LoginPage, // Registrando a página de login
